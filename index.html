@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulces Regionales Carmelita</title>
+
+  <style>
+    /* =========================
+       COLORES EDITABLES 
+    ========================= */
+    :root{
+      --beige-principal: #F7C2A4;  
+      --beige-claro: #FEE8DC;      
+      --beige-oscuro: #F1AC83;     
+      --cafe: #C18A6A;             
+      --cafe-oscuro: #A97A5E;      
+      --dorado: #F1AC83;           
+      --blanco: #FFFFFF;           
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: var(--beige-claro);
+      color: var(--cafe);
+      line-height:1.6;
+    }
+
+    /* ESTE ES EL TITULO CON FONDO CAFE E IMAGEN EDITABLE */
+    header{
+      background: var(--cafe);
+      /* Fondo con imagen: ahora ruta correcta */
+      background-image: url('imagenes/fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      color:white;
+      text-align:center;
+      padding:70px 20px;
+      position: relative;
+    }
+    /* Capa oscura adaptada al nuevo color */
+    header::before{
+      content: '';
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background-color: rgba(193, 138, 106, 0.85);
+      z-index: 1;
+    }
+    header h1, header p{
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1{
+      font-size:3rem;
+      margin-bottom:10px;
+    }
+
+    header p{
+      font-size:1.2rem;
+    }
+
+    nav{
+      background: var(--cafe);
+      padding:15px;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin:0 15px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color: var(--dorado);
+    }
+
+    section{
+      max-width:1200px;
+      margin:auto;
+      padding:60px 20px;
+    }
+
+    .titulo{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    .titulo h2{
+      font-size:2.2rem;
+      color: var(--cafe);
+    }
+
+    /* =========================
+       GALERIA
+    ========================= */
+
+    .galeria{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:white;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.15);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    /* =========================
+       NOMBRE DE LAS IMAGENES
+       EDITABLE
+    ========================= */
+
+    .nombre-dulce{
+      padding:15px;
+      text-align:center;
+      font-size:1.1rem;
+      font-weight:bold;
+      color: var(--cafe-oscuro);
+      background: var(--beige-principal);
+    }
+
+    /* =========================
+       CONTACTO
+    ========================= */
+
+    .contacto{
+      background: var(--beige-principal);
+      padding:40px;
+      border-radius:20px;
+      text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .contacto h3{
+      font-size:2rem;
+      margin-bottom:20px;
+    }
+
+    .telefono{
+      font-size:1.3rem;
+      margin:10px 0;
+      font-weight:bold;
+    }
+
+    .ubicacion{
+      margin-top:15px;
+      font-size:1.1rem;
+    }
+
+    .boton{
+      display:inline-block;
+      margin-top:25px;
+      padding:12px 25px;
+      background: var(--cafe);
+      color:white;
+      text-decoration:none;
+      border-radius:10px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .boton:hover{
+      background: var(--cafe-oscuro);
+    }
+
+    iframe{
+      width:100%;
+      height:400px;
+      border:none;
+      border-radius:15px;
+      margin-top:30px;
+    }
+
+    footer{
+      background: var(--cafe-oscuro);
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:50px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- =========================
+       ENCABEZADO
+  ========================= -->
+
+  <header>
+    <h1>Dulces Regionales Carmelita</h1>
+    <p>Tradición y sabor auténtico de Tlaxiaco</p>
+  </header>
+
+  <!-- =========================
+       MENU
+  ========================= -->
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <!-- =========================
+       INICIO
+  ========================= -->
+
+  <section id="inicio">
+
+    <div class="titulo">
+      <h2>Bienvenidos</h2>
+    </div>
+
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      Dulces Regionales Carmelita ofrece productos del sabor tradicional de Tlaxiaco. 
+    </p>
+
+  </section>
+
+  <!-- =========================
+       GALERIA
+  ========================= -->
+
+  <section id="galeria">
+
+    <div class="titulo">
+      <h2>Galería de Productos</h2>
+    </div>
+
+    <div class="galeria">
+
+      <!-- PRODUCTO 1 -->
+      <div class="card">
+        <img src="imagenes/calaverita_amaranto.jpeg" alt="Calaverita de amaranto">
+        <div class="nombre-dulce">
+          Calaverita de amaranto
+        </div>
+      </div>
+
+      <!-- PRODUCTO 2 -->
+      <div class="card">
+        <img src="imagenes/calaverita_chocolate.jpeg" alt="Calaverita de chocolate">
+        <div class="nombre-dulce">
+          Calaverita de chocolate
+        </div>
+      </div>
+
+      <!-- PRODUCTO 3 -->
+      <div class="card">
+        <img src="imagenes/canasta_dulces_2.jpeg" alt="Canasta de dulces">
+        <div class="nombre-dulce">
+          Canasta de dulces
+        </div>
+      </div>
+
+      <!-- PRODUCTO 4 -->
+      <div class="card">
+        <img src="imagenes/torreja.jpeg" alt="Torreja">
+        <div class="nombre-dulce">
+         Torreja
+        </div>
+      </div>
+
+      <!-- PRODUCTO 5 -->
+      <div class="card">
+        <img src="imagenes/empanada_lechesilla.jpeg" alt="Empanadas de lechesilla">
+        <div class="nombre-dulce">
+          Empanadas de lechesilla
+        </div>
+      </div>
+
+      <!-- PRODUCTO 6 -->
+      <div class="card">
+        <img src="imagenes/polvorones.jpeg" alt="Polvorones">
+        <div class="nombre-dulce">
+          Polvorones
+        </div>
+      </div>
+
+      <!-- PRODUCTO 7 -->
+      <div class="card">
+        <img src="imagenes/ticuta.jpeg" alt="Ticuta">
+        <div class="nombre-dulce">
+          Ticuta
+        </div>
+      </div>
+
+      <!-- PRODUCTO 8 -->
+      <div class="card">
+        <img src="imagenes/empanada_betun.jpeg" alt="Empanada de betun">
+        <div class="nombre-dulce">
+          Empanada de betun
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       CONTACTO
+  ========================= -->
+
+  <section id="contacto">
+
+    <div class="contacto">
+
+      <h3>Contáctanos</h3>
+
+      <!-- TELEFONOS EDITABLES -->
+      <div class="telefono">
+        📞 953 111 25 77
+      </div>
+
+      <div class="telefono">
+        📞 953 209 78 01
+      </div>
+
+      <!-- UBICACION -->
+      <div class="ubicacion">
+        📍 AV. Universidad Barrio San Diego, Tlaxiaco Oaxaca
+      </div>
+
+      <div class="ubicacion">
+        Coordenadas GPS:17°16'29.5"N 97°40'49.5"W
+      </div>
+
+      <!-- BOTON WHATSAPP EDITABLE -->
+      <a class="boton" href="https://wa.me/529531112577" target="_blank">
+        Enviar WhatsApp
+      </a>
+
+      <!-- MAPA -->
+      <iframe
+        src="https://www.google.com/maps?q=17.274861,-97.680417&z=17&output=embed">
+      </iframe>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+    <p>
+      © 2026 Dulces Regionales Carmelita
+    </p>
+  </footer>
+
+</body>
+</html>
